@@ -1,0 +1,37 @@
+# Safe functions
+
+# funtion 1: safe_divide
+def safe_divide(a, b):
+    try:
+        return a / b 
+    except ZeroDivisionError:
+        return "Cannot divide by zero"
+
+
+# function 2:safe_number
+def safe_number(text):
+    try:
+        return int(text) 
+    except ValueError:
+        return "Not a number" 
+
+
+# function 3:  get_field
+def get_field(learner, key):
+    try:
+        return learner [key]
+        return learner[key]
+    except KeyError:
+        return "Field not found"
+
+
+print(safe_divide(10, 2))
+print(safe_divide(10, 0))
+print(safe_number("42"))
+print(safe_number("abc"))
+
+learner = {"name": "Amina", "score": 82}
+print(get_field(learner, "score"))
+print(get_field(learner, "email"))
+
+
